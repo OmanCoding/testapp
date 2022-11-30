@@ -1,0 +1,26 @@
+extends layout
+
+block content
+
+  .formbox
+    div
+      a(href='/login') Login 
+      hr.rounded
+      if done 
+        hr.dotted 
+        span #{done} created 
+        hr.dotted
+      div 
+        p Create user
+        p
+          a(href=`/create/user/${user}`) /create/user/#{user}
+        p
+          small Note: #{user} will be username & password
+      hr.rounded
+      div 
+        p Create admin
+        p
+          a(href=`/create/admin/${admin}`) /create/admin/#{admin}
+        p
+          small Note: #{admin} will be username & password
+        

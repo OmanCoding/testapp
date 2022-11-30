@@ -1,0 +1,18 @@
+extends ../layoutheader
+
+block view
+  h1 User Page
+  h3 Manage tasks
+  div(style='display:flex;justify-content:center;')
+      table
+        tbody
+          each task in tasks
+            tr
+              td #{task.task}
+              if task.done
+                td ✅
+              else 
+                td(id=task._id)
+                  button(onclick=`markTask("${task._id}")`) Mark done
+  script
+    include useractions.js

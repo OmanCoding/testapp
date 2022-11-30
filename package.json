@@ -1,0 +1,29 @@
+{
+	"name": "express-example-starter",
+	"version": "1.0.0",
+	"description": "An Express-based application skeleton",
+	"main": "app.js",
+	"scripts": {
+		"start": "nodemon --ignore 'data/*' app.js localhost 8080"
+	},
+	"dependencies": {
+		"bcrypt": "5.1.0",
+		"colors": "^1.4.0",
+		"cookie-parser": "~1.4.4",
+		"debug": "~2.6.9",
+		"express": "~4.16.1",
+		"express-nedb-session": "0.1.1",
+		"express-session": "1.17.3",
+		"morgan": "~1.9.1",
+		"nedb-promises": "6.2.1",
+		"nodemon": "2.0.20",
+		"pug": "^3.0.2"
+	},
+	"devDependencies": {
+		"nodemon": "1.18.4"
+	},
+	"keywords": [
+		"expressjs",
+		"express"
+	]
+}

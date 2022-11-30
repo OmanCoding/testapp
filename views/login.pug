@@ -1,0 +1,19 @@
+extends layout
+
+block content
+
+  .formbox
+    form(action='/login' method='POST')
+      if (failed)
+        - var randomColor = Math.floor(Math.random()*16777215).toString(16);
+        div(style=`color:#${randomColor};`) Incorrect username or password
+      label(for='') Username:
+      br
+      input(type='text' name='username' value='adminuser')
+      br
+      label(for='') Password:
+      br
+      input(type='password' name='password' value='adminuser')
+      br
+      br
+      input(type='submit' value='Submit')

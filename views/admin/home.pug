@@ -1,0 +1,33 @@
+extends ../layoutheader
+
+block view
+  h1 Admin Page
+  h3 Add tasks to users
+  a(href='/admin/listusers') List of all users
+  br
+  br
+  form(action='/admin/add/task' method='POST')
+      label(for='') Task:
+      input(type='text' name='task' value='')
+      label(for='') User:
+      select(name='user' id='userSelect')
+        each user in users 
+          option(value=user.username) #{user.username}
+      br
+      br
+      input(type='submit' value='Assign task')
+
+  br
+  div(style='display:flex;')
+    each group, user in tasks 
+      div(style='border:1px solid green;padding:10px;')
+        span #{user}
+        ul
+          each task in group 
+            li 
+              div 
+                span #{task.task}
+                if (task.done)
+                  span ✅
+                else 
+                  span ❌
